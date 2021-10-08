@@ -1,0 +1,38 @@
+//
+//  SecondViewController.swift
+//  Lesson9
+//
+//  Created by Владимир Рузавин on 10/6/21.
+//
+
+import UIKit
+import CoreFoundation
+
+class SecondViewController: UIViewController {
+    
+    overridefunc viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.delegate = self
+    }
+    
+    @IBAction func didPressedButton(_ sender Any) {
+        self.dismiss(animated: true)
+    }
+}
+
+extension SecondViewontroller: UINavigationControllerDelegate {
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return nil
+    }
+}
+
+class interactiveTransition: UIPercentDrivenInteractiveTransition. UIViewControllerAnimatedTransitioning {
+
+    func  transitionDuraton(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.5
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+    }
+}
